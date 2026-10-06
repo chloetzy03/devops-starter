@@ -6,7 +6,7 @@ on:
 
 jobs:
   devsecops-activity:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps: 
     - name: get repo code
       uses: actions/checkout@v7
