@@ -1,0 +1,26 @@
+name: CI
+
+on: [push] 
+  branches: [main]
+
+jobs:
+  securitytest:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: set up python
+      uses: actions/checkout@v7
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.13' 
+
+    - name: install dependencies
+      uses: insightsengineering/pip-action@v2
+      with:
+        requirements: requirements.txt 
+
+    - name: run unit test
+      run: pytest test_calculator.py
+
+    - name: run security scan
+      run: bandit -r .
+    
