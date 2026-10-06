@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  securitytest:
+  devsecops-activity:
     runs-on: macos-latest
     steps: 
     - name: set up python
