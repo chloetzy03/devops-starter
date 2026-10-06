@@ -8,6 +8,9 @@ jobs:
   devsecops-activity:
     runs-on: macos-latest
     steps: 
+    - name: get repo code
+      uses: actions/checkout@v7
+    
     - name: set up python
       uses: actions/setup-python@v7
       with:
